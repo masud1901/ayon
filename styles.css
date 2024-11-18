@@ -1,0 +1,27 @@
+/* Base Styles */
+@import 'styles/base/variables.css';
+@import 'styles/base/reset.css';
+
+/* Layout */
+@import 'styles/layout/header.css';
+@import 'styles/layout/footer.css';
+@import 'styles/layout/sections.css';
+
+/* Components */
+@import 'styles/components/navigation.css';
+@import 'styles/components/cards.css';
+@import 'styles/components/buttons.css';
+
+/* Utils */
+@import 'styles/utils/animations.css';
+@import 'styles/utils/helpers.css';
+
+/* Modules */
+@import 'styles/modules/hero.css';
+@import 'styles/modules/about.css';
+@import 'styles/modules/publications.css';
+@import 'styles/modules/achievements.css';
+@import 'styles/modules/affiliations.css';
+@import 'styles/modules/research-updates.css';
+@import 'styles/modules/contact.css';
+@import 'styles/modules/active-projects.css';

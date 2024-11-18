@@ -1,0 +1,114 @@
+/* Contact Section */
+#contact {
+    position: relative;
+    background: linear-gradient(
+        135deg,
+        rgba(25, 25, 40, 0.97) 0%,
+        rgba(40, 85, 125, 0.95) 100%
+    );
+    color: white;
+    padding: 6rem 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+    padding: 2.5rem;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(100, 181, 246, 0.3);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    color: #64b5f6;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.1);
+}
+
+.contact-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.contact-info {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.contact-info a {
+    color: #64b5f6;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.contact-info a:hover {
+    color: #90caf9;
+    border-bottom-color: #90caf9;
+}
+
+@media (max-width: 1200px) {
+    .contact-grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #contact {
+        padding: 4rem 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+
+    .contact-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-title {
+        font-size: 1.2rem;
+    }
+
+    .contact-info {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        padding: 1.25rem;
+    }
+
+    .contact-info a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+} 
