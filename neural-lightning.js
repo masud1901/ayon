@@ -55,11 +55,10 @@ class NeuralLightning {
     
     this.init();
   }
-
   init() {
     this.nodes = [];
-    const area = (this.canvas.width * this.canvas.height) / (window.devicePixelRatio || 1);
-    const numNodes = Math.min(20, Math.floor(area / 20000));
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const numNodes = isMobile ? 4 : 50;
     
     for (let i = 0; i < numNodes; i++) {
       this.nodes.push({
