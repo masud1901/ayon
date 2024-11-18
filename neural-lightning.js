@@ -6,22 +6,25 @@ class NeuralLightning {
   }
 
   initialize() {
-    this.canvas = document.getElementById('neural-lightning');
+    this.canvas = document.getElementById("neural-lightning");
     if (!this.canvas) return;
 
-    this.ctx = this.canvas.getContext('2d', { alpha: true });
+    this.ctx = this.canvas.getContext("2d", { alpha: true });
     this.nodes = [];
     this.lastTime = 0;
     this.fps = 30;
     this.fpsInterval = 1000 / this.fps;
     this.colors = {
-      node: '#64b5f6',
-      connection: '#3498db',
-      glow: '#2980b9'
+      node: "#64b5f6",
+      connection: "#3498db",
+      glow: "#2980b9",
     };
 
     this.resize();
-    window.addEventListener('resize', this.debounce(() => this.resize(), 250));
+    window.addEventListener(
+      "resize",
+      this.debounce(() => this.resize(), 250)
+    );
 
     this.init();
     this.animate(0);
@@ -41,33 +44,34 @@ class NeuralLightning {
 
   resize() {
     if (!this.canvas) return;
-    
-    const hero = document.getElementById('hero');
+
+    const hero = document.getElementById("hero");
     const dpr = window.devicePixelRatio || 1;
-    
+
     this.canvas.style.width = hero.offsetWidth + "px";
     this.canvas.style.height = hero.offsetHeight + "px";
-    
+
     this.canvas.width = hero.offsetWidth * dpr;
     this.canvas.height = hero.offsetHeight * dpr;
-    
+
     this.ctx.scale(dpr, dpr);
-    
+
     this.init();
   }
   init() {
     this.nodes = [];
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    const numNodes = isMobile ? 4 : 50;
-    
+    const numNodes = isMobile ? 10 : 50;
+
     for (let i = 0; i < numNodes; i++) {
       this.nodes.push({
         x: Math.random() * (this.canvas.width / (window.devicePixelRatio || 1)),
-        y: Math.random() * (this.canvas.height / (window.devicePixelRatio || 1)),
+        y:
+          Math.random() * (this.canvas.height / (window.devicePixelRatio || 1)),
         vx: (Math.random() - 0.5) * 1.2,
         vy: (Math.random() - 0.5) * 1.2,
         radius: Math.random() * 2 + 3,
-        pulsePhase: Math.random() * Math.PI * 2
+        pulsePhase: Math.random() * Math.PI * 2,
       });
     }
   }
@@ -97,7 +101,7 @@ class NeuralLightning {
 
     this.ctx.strokeStyle = `rgba(100, 181, 246, ${brightness * 0.8})`;
     this.ctx.lineWidth = 3;
-    this.ctx.shadowColor = 'rgba(100, 181, 246, 0.8)';
+    this.ctx.shadowColor = "rgba(100, 181, 246, 0.8)";
     this.ctx.shadowBlur = 20;
     this.ctx.stroke();
 
@@ -123,13 +127,21 @@ class NeuralLightning {
 
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-      this.nodes.forEach(node => {
+      this.nodes.forEach((node) => {
         node.x += node.vx;
         node.y += node.vy;
         node.pulsePhase += 0.05;
 
-        if (node.x < 0 || node.x > this.canvas.width / (window.devicePixelRatio || 1)) node.vx *= -1;
-        if (node.y < 0 || node.y > this.canvas.height / (window.devicePixelRatio || 1)) node.vy *= -1;
+        if (
+          node.x < 0 ||
+          node.x > this.canvas.width / (window.devicePixelRatio || 1)
+        )
+          node.vx *= -1;
+        if (
+          node.y < 0 ||
+          node.y > this.canvas.height / (window.devicePixelRatio || 1)
+        )
+          node.vy *= -1;
       });
 
       for (let i = 0; i < this.nodes.length; i++) {
@@ -139,34 +151,34 @@ class NeuralLightning {
           const dx = node.x - otherNode.x;
           const dy = node.y - otherNode.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
-          
+
           if (distance < 200) {
-            const brightness = (1 - distance / 200);
+            const brightness = 1 - distance / 200;
             this.drawLightning(node, otherNode, brightness);
           }
         }
       }
 
-      this.nodes.forEach(node => {
+      this.nodes.forEach((node) => {
         const pulseSize = Math.sin(node.pulsePhase) * 0.5 + 1;
         const radius = node.radius * pulseSize;
 
         this.ctx.beginPath();
         this.ctx.arc(node.x, node.y, radius + 4, 0, Math.PI * 2);
-        this.ctx.fillStyle = 'rgba(100, 181, 246, 0.4)';
-        this.ctx.shadowColor = 'rgba(100, 181, 246, 0.8)';
+        this.ctx.fillStyle = "rgba(100, 181, 246, 0.4)";
+        this.ctx.shadowColor = "rgba(100, 181, 246, 0.8)";
         this.ctx.shadowBlur = 15;
         this.ctx.fill();
 
         this.ctx.beginPath();
         this.ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
-        this.ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+        this.ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
         this.ctx.shadowBlur = 10;
         this.ctx.fill();
 
         this.ctx.beginPath();
         this.ctx.arc(node.x, node.y, radius * 0.5, 0, Math.PI * 2);
-        this.ctx.fillStyle = '#64b5f6';
+        this.ctx.fillStyle = "#64b5f6";
         this.ctx.shadowBlur = 0;
         this.ctx.fill();
       });
@@ -182,6 +194,6 @@ class NeuralLightning {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   new NeuralLightning();
 });
