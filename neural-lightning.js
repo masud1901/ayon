@@ -59,7 +59,7 @@ class NeuralLightning {
   init() {
     this.nodes = [];
     const area = (this.canvas.width * this.canvas.height) / (window.devicePixelRatio || 1);
-    const numNodes = Math.min(75, Math.floor(area / 20000));
+    const numNodes = Math.min(20, Math.floor(area / 20000));
     
     for (let i = 0; i < numNodes; i++) {
       this.nodes.push({
