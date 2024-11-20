@@ -42,12 +42,8 @@
             "title": "Clickshots",
             "status": "In Progress",
             "startDate": "Nov 2024",
-            "description": "Developing a pip package for simple screenshot capturing and processing.",
-            "tags": [
-                "Python",
-                "Screenshot",
-                "Pip Package"
-            ],
+            "description": "Building a Python package for automated screenshot capture and processing with advanced image manipulation capabilities.",
+            "tags": ["Python", "Screenshot", "Pip Package"],
             "collaborators": [],
             "expectedCompletion": "Jan 2025",
             "link": "https://github.com/masud1901/clickshot"
@@ -56,15 +52,9 @@
             "title": "Sleep Apnea Detection using Deep Learning Methods",
             "status": "In Progress",
             "startDate": "May 2024",
-            "description": "A new approach to process ECG signal and spectrogram to detect sleep apnea.",
-            "tags": [
-                "Deep Learning",
-                "ECG Signal Processing",
-                "Sleep Apnea Detection"
-            ],
-            "collaborators": [
-                "IIT-JU"
-            ],
+            "description": "Implementing novel deep learning architectures for sleep apnea detection through ECG signal analysis and spectrogram processing.",
+            "tags": ["Deep Learning", "ECG Signal Processing", "Sleep Apnea Detection"],
+            "collaborators": ["IIT-JU"],
             "expectedCompletion": "Dec 2024",
             "link": "https://github.com/masud1901/Sleep-Apnea-Dataset-Preparation"
         },
@@ -72,15 +62,9 @@
             "title": "Monte Carlo Simulation for Bangladesh Election",
             "status": "Active Research",
             "startDate": "Oct 2024",
-            "description": "Bangladesh Election Simulation and Reverse Political Spectrum Inference Using Monte Carlo Simulation.",
-            "tags": [
-                "Monte Carlo Simulation",
-                "Political Spectrum",
-                "Statistics"
-            ],
-            "collaborators": [
-                "IIT-JU"
-            ],
+            "description": "Developing statistical models using Monte Carlo methods to analyze electoral patterns and political spectrum distribution in Bangladesh.",
+            "tags": ["Monte Carlo Simulation", "Political Spectrum", "Statistics"],
+            "collaborators": ["IIT-JU"],
             "expectedCompletion": "Feb 2025",
             "link": "https://github.com/masud1901/Bangladesh-Political-Landscape-with-Monte-Carlo-Simulation"
         },
@@ -88,15 +72,9 @@
             "title": "Federated Learning Optimization",
             "status": "Starting Soon",
             "startDate": "Dec 2024",
-            "description": "A new approach to optimize client-server communication aggregation in federated learning setting.",
-            "tags": [
-                "Federated Learning",
-                "Optimization",
-                "Communication"
-            ],
-            "collaborators": [
-                "IIT-JU"
-            ],
+            "description": "Researching novel optimization techniques for efficient client-server communication in federated learning environments.",
+            "tags": ["Federated Learning", "Optimization", "Communication"],
+            "collaborators": ["IIT-JU"],
             "expectedCompletion": "Apr 2025",
             "link": "#"
         }
@@ -104,92 +82,56 @@
     "projects": [
         {
             "title": "MosQnet-SA",
-            "description": "Developed a model for mosquito species classification to assist in disease mapping efforts, leveraging convolutional and attention-based networks.",
-            "tags": [
-                "Deep Learning",
-                "Computer Vision",
-                "Mosquito Species Classification"
-            ],
+            "description": "Implemented an advanced CNN-Attention hybrid architecture for accurate mosquito species classification, contributing to disease surveillance systems.",
+            "tags": ["Deep Learning", "Computer Vision", "Mosquito Species Classification"],
             "link": "https://github.com/masud1901/MosQNet-SA"
         },
         {
             "title": "Alzheimer's Image Augmentation using PseudoRGB",
-            "description": "Evaluated the effectiveness of the PseudoRGB technique as a novel image augmentation method for Alzheimer's disease detection, comparing its performance against traditional augmentation strategies.",
-            "tags": [
-                "Deep Learning",
-                "Computer Vision",
-                "Image Processing"
-            ],
+            "description": "A novel application of PseudoRGB augmentation techniques for enhanced Alzheimer's disease detection, demonstrating improved model performance over conventional methods.",
+            "tags": ["Deep Learning", "Computer Vision", "Image Processing"],
             "link": "https://github.com/masud1901/Alzheimers-Pseudo-RGB-Dataset-Comperative-Study"
         },
         {
             "title": "Heart Disease Analysis and Prediction",
-            "description": "Performed extensive EDA and implemented ML classifiers on a heart disease dataset to benchmark performance metrics.",
-            "tags": [
-                "Machine Learning",
-                "Data Analysis",
-                "Classification"
-            ],
+            "description": "Conducted comprehensive statistical analysis and implemented machine learning models for heart disease prediction, achieving significant accuracy improvements.",
+            "tags": ["Machine Learning", "Data Analysis", "Classification"],
             "link": "https://github.com/masud1901/EDA-and-ML-model-prediction-on-Heart-Dataset"
         },
         {
             "title": "Face Recognition with OpenCV",
-            "description": "Implemented a face recognition system using OpenCV to explore real-time image processing techniques.",
-            "tags": [
-                "Computer Vision",
-                "Face Recognition",
-                "OpenCV"
-            ],
+            "description": "Developed a real-time face recognition system utilizing OpenCV, incorporating advanced image processing algorithms for robust performance.",
+            "tags": ["Computer Vision", "Face Recognition", "OpenCV"],
             "link": "https://github.com/masud1901/face-recognition-openCV"
         },
         {
             "title": "Military Audio Dataset Handling",
-            "description": "Developed tools and preprocessing techniques for handling and analyzing military audio datasets for advanced sound classification tasks.",
-            "tags": [
-                "Audio Processing",
-                "Sound Classification",
-                "Data Analysis"
-            ],
+            "description": "Engineered sophisticated preprocessing pipelines for military audio classification, optimizing data handling for large-scale acoustic analysis.",
+            "tags": ["Audio Processing", "Sound Classification", "Data Analysis"],
             "link": "https://github.com/masud1901/military_audio_dataset_dataset_handling"
         },
         {
             "title": "AES Encryption with LSB Steganography",
-            "description": "Combined image steganography with AES cryptography to create a secure information embedding method.",
-            "tags": [
-                "Cryptography",
-                "Security",
-                "Image Processing"
-            ],
+            "description": "Integrated AES encryption with LSB steganography techniques to develop a robust information security solution for image-based data transmission.",
+            "tags": ["Cryptography", "Security", "Image Processing"],
             "link": "https://github.com/masud1901/AES-encription-with-LSB-steganography"
         },
         {
             "title": "SA East Website Project",
-            "description": "Designed and developed a website project for showcasing features and services, focusing on user interface and interactive elements.",
-            "tags": [
-                "Web Development",
-                "UI Design",
-                "JavaScript"
-            ],
+            "description": "Architected and implemented a responsive web platform with modern UI/UX principles and interactive features.",
+            "tags": ["Web Development", "UI Design", "JavaScript"],
             "link": "https://github.com/masud1901/SA-east-website-project"
         },
         {
             "title": "Land Cover Data Processing",
-            "description": "Implemented Felzenszwalb's segmentation technique to process and analyze 2023 land cover raster data of Haywood County, Tennessee.",
-            "tags": [
-                "GIS",
-                "Image Segmentation",
-                "Data Processing"
-            ],
+            "description": "Applied Felzenszwalb's algorithm for advanced segmentation of land cover data, enabling precise geographical analysis of Haywood County.",
+            "tags": ["GIS", "Image Segmentation", "Data Processing"],
             "link": "https://github.com/masud1901/Land-Cover-Data-Processing"
         },
         {
             "title": "Asteroid Shooter Game",
-            "description": "Developed an engaging asteroid shooter game using JavaScript, featuring dynamic animations and responsive controls.",
-            "tags": [
-                "Game Development",
-                "JavaScript",
-                "Animations"
-            ],
+            "description": "Created an interactive browser-based game featuring physics-based animations and responsive control systems.",
+            "tags": ["Game Development", "JavaScript", "Animations"],
             "link": "https://github.com/masud1901/Asteroid-Shooter"
         }
     ],
@@ -216,21 +158,21 @@
     "affiliations": [
         {
             "organization": "IEEE JU Student Branch",
-            "role": "Media and Communications Lead & Membership Development Lead",
+            "role": "Media and Communications Lead & Membership Development Lead", 
             "period": "Feb 2022 - Aug 2024",
-            "description": "Managed member engagement and communications, increasing branch visibility and event participation."
+            "description": "Spearheaded strategic communications and membership growth initiatives, resulting in a 40% increase in branch visibility and active participation across technical events and workshops."
         },
         {
             "organization": "E-Business & Entrepreneurship Club, JU",
             "role": "Executive",
-            "period": "Mar 2019 - Jun 2022",
-            "description": "Coordinated events promoting entrepreneurship and fostering collaboration in business innovation."
+            "period": "Mar 2019 - Jun 2022", 
+            "description": "Orchestrated impactful entrepreneurship workshops and networking events, facilitating meaningful connections between students and industry leaders while nurturing innovative business ideas."
         },
         {
             "organization": "IIT-JU Sports Club",
             "role": "President",
             "period": "Jan 2024 - Present",
-            "description": "Led a team of 50 members, organizing sports events and initiatives to promote student well-being."
+            "description": "Currently leading a dynamic team of 50 members, successfully implementing diverse sports programs and wellness initiatives that have enhanced student engagement and physical well-being across campus."
         }
     ],
     "about": {

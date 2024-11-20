@@ -23,6 +23,7 @@ async function loadContent() {
     }
 
     loadProjectImages();
+    initializeAboutSection();
   } catch (error) {
     console.error("Error loading content:", error);
   }
@@ -30,13 +31,12 @@ async function loadContent() {
 
 function renderAbout(about) {
   const heroBio = document.querySelector("#hero p");
-  heroBio.textContent = about.shortBio;
-
-  const aboutText = document.querySelector(".about-text");
-  aboutText.textContent = about.fullBio;
+  if (heroBio && about.shortBio) {
+    heroBio.textContent = about.shortBio;
+  }
 
   const profilePic = document.querySelector(".profile-pic");
-  if (profilePic) {
+  if (profilePic && about.image) {
     profilePic.src = about.image;
   }
 }
@@ -346,3 +346,47 @@ document.addEventListener("DOMContentLoaded", () => {
     updateThemeIcon(newTheme);
   });
 });
+
+function initializeAboutSection() {
+    const aboutSection = document.querySelector('.about-text');
+    const paragraphs = aboutSection.querySelectorAll('p');
+    const list = aboutSection.querySelector('.about-list');
+    
+    // Add initial classes for animation
+    paragraphs.forEach((p, index) => {
+        p.classList.add('animate-paragraph');
+        p.style.animationDelay = `${index * 0.2}s`;
+    });
+
+    if (list) {
+        const listItems = list.querySelectorAll('li');
+        listItems.forEach((item, index) => {
+            item.classList.add('animate-list-item');
+            item.style.animationDelay = `${(paragraphs.length * 0.2) + (index * 0.15)}s`;
+        });
+    }
+
+    // Add scroll reveal effect
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    paragraphs.forEach(p => observer.observe(p));
+    if (list) {
+        observer.observe(list);
+    }
+
+    // Add hover effect for paragraphs
+    paragraphs.forEach(p => {
+        p.addEventListener('mouseenter', () => {
+            p.classList.add('highlight');
+        });
+        p.addEventListener('mouseleave', () => {
+            p.classList.remove('highlight');
+        });
+    });
+}

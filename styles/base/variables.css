@@ -1,6 +1,6 @@
 :root {
     /* Colors */
-    --primary-color: #2c3e50;
+    --primary-color: #447eb7;
     --secondary-color: #3498db;
     --accent-color: #64b5f6;
     
@@ -31,4 +31,7 @@
     /* Effects */
     --transition: all 0.3s ease;
     --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    
+    /* Add this line with your primary color in RGB format */
+    --primary-color-rgb: 64, 128, 255; /* Adjust these values to match your primary color */
 } 
