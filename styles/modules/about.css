@@ -370,4 +370,174 @@ body[data-theme="dark"] .animate-paragraph.highlight {
 /* Add this to your CSS variables in :root */
 :root {
     --primary-color-rgb: 64, 128, 255; /* Adjust this to match your primary color */
+}
+
+/* Enhanced Link Styling - Dark Mode */
+body[data-theme="dark"] .about-text a {
+    color: var(--accent-color);
+    background: rgba(100, 181, 246, 0.1);
+    border-radius: 4px;
+    padding: 0.1em 0.4em;
+    margin: -0.1em -0.1em;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+body[data-theme="dark"] .about-text a:hover {
+    color: var(--accent-color);
+    background: rgba(100, 181, 246, 0.2);
+    transform: translateY(-2px);
+}
+
+body[data-theme="dark"] .about-text a::before {
+    background: var(--accent-color);
+}
+
+/* Improved Mobile Responsiveness */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .about-image {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .profile-frame {
+        margin-bottom: 1.5rem;
+        padding: 8px;
+    }
+
+    .about-content {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .about-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+        text-align: center;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+    }
+
+    .about-text p:first-of-type {
+        font-size: 1.1rem;
+    }
+
+    .about-list {
+        margin: 1rem 0 1.5rem 1rem;
+    }
+
+    .about-list li {
+        padding: 0.4rem 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Enhanced Mobile Link Styling */
+    .about-text a {
+        padding: 0.2em 0.4em;
+        margin: 0 0.1em;
+        display: inline-block;
+        line-height: 1.4;
+    }
+
+    /* Improved Mobile Animations */
+    .animate-paragraph {
+        transform: translateY(15px);
+    }
+
+    .animate-list-item {
+        transform: translateX(-15px);
+    }
+
+    /* Better Touch Area for Mobile */
+    .about-list li::before {
+        left: -8px;
+        font-size: 1.1em;
+    }
+
+    /* Improved Mobile Spacing */
+    .about-text p {
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+    }
+}
+
+/* Additional Mobile Optimizations */
+@media (max-width: 480px) {
+    .about-image {
+        max-width: 200px;
+    }
+
+    .about-content {
+        padding: 1.2rem;
+        margin: 0 0.5rem;
+    }
+
+    .about-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .about-text {
+        font-size: 0.9rem;
+    }
+
+    .about-text p:first-of-type {
+        font-size: 1rem;
+    }
+
+    /* Enhanced Link Visibility for Small Screens */
+    .about-text a {
+        border-bottom: 1px dotted var(--primary-color);
+        padding: 0.15em 0.3em;
+    }
+
+    body[data-theme="dark"] .about-text a {
+        border-bottom: 1px dotted var(--accent-color);
+        padding: 0.15em 0.3em;
+    }
+}
+
+/* Tablet Optimization */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .about-grid {
+        gap: 2rem;
+        grid-template-columns: 250px 1fr;
+    }
+
+    .about-content {
+        padding: 2rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+}
+
+/* Enhanced Link Accessibility */
+.about-text a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+body[data-theme="dark"] .about-text a:focus {
+    outline-color: var(--accent-color);
+}
+
+/* Better Touch Feedback */
+@media (hover: none) {
+    .about-text a:active {
+        transform: scale(0.98);
+        opacity: 0.8;
+    }
+
+    .about-list li:active::before {
+        transform: translateX(3px);
+    }
 } 
