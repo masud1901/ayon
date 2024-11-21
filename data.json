@@ -20,7 +20,7 @@
             "underReview": true,
             "venue": "Under Review at Nature Physics",
             "links": {
-                "pdf": "https://api.semanticscholar.org/CorpusID:273811974",
+                "pdf": "https://arxiv.org/abs/2411.01641",
                 "code": "#"
             }
         },
@@ -32,7 +32,7 @@
             "underReview": true,
             "venue": "Conference Proceedings",
             "links": {
-                "pdf": "https://api.semanticscholar.org/CorpusID:273812429",
+                "pdf": "https://arxiv.org/abs/2411.01642",
                 "code": "#"
             }
         }
