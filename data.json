@@ -1,6 +1,30 @@
 {
     "publications": [
         {
+            "title": "MosQNet-SA: Explainable convolutional-attention network for mosquito classification with application as a RESTful API for dengue and malaria risk mapping",
+            "authors": "Masud, M. A., Akter, S., Sultana, N., Islam, M. S., Yousuf, M. A., Noori, F. M., & Uddin, M. Z.",
+            "year": "2024",
+            "description": "Novel deep learning architecture for mosquito species classification with practical applications in disease surveillance.",
+            "underReview": true,
+            "venue": "Figshare",
+            "links": {
+                "pdf": "https://doi.org/10.6084/m9.figshare.27996986.v2",
+                "code": "https://github.com/masud1901/MosQNet-SA"
+            }
+        },
+        {
+            "title": "Pseudo-RGB Data Augmentation for Improved Alzheimer's Disease Detection: An Analysis of CNN Performance",
+            "authors": "Masud, M. A., Akter, S., Sultana, N., Hosen, M. B., Anannya, M., Yousuf, M. A., Azad, A. K. M., Alyami, S. A., & Moni, M. A.",
+            "year": "2024",
+            "description": "Innovative data augmentation technique for enhancing Alzheimer's disease detection using deep learning.",
+            "underReview": true,
+            "venue": "Figshare",
+            "links": {
+                "pdf": "https://doi.org/10.6084/m9.figshare.27997094.v1",
+                "code": "https://github.com/masud1901/Alzheimers-Pseudo-RGB-Dataset-Comperative-Study"
+            }
+        },
+        {
             "title": "KACQ-DCNN: Uncertainty-Aware Interpretable Kolmogorov-Arnold Classical-Quantum Dual-Channel Neural Network for Heart Disease Detection",
             "authors": "Jahin, M. A., Masud, M. A., Mridha, M. F., Aung, Z., & Dey, N.",
             "year": "2024",
