@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Md. Akmol Masud</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLR6FNLGT2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-JLR6FNLGT2');
+    </script>
+</head>
+
+<body>
+    <canvas id="neural-lightning"></canvas>
+    <div class="profile-container">
+        <header>
+            <a href="index.html" class="home-logo" aria-label="Home">
+                <i class="fas fa-home"></i>
+            </a>
+
+            <hr class="separator top-separator">
+
+            <div class="page-title">
+                <h1 class="large-title">Publications</h1>
+                <p class="title-subtitle">Research Contributions</p>
+            </div>
+            
+            <hr class="separator bottom-separator">
+
+            <!-- Vasilaki-style Navigation Boxes -->
+            <div class="vasilaki-nav">
+                <a href="about.html" class="nav-box">PROFILE</a>
+                <a href="projects.html" class="nav-box">PROJECTS</a>
+                <a href="publications.html" class="nav-box active">PUBLICATIONS</a>
+                <a href="contact.html" class="nav-box">CONTACT</a>
+                </div>
+                
+            <hr class="separator">
+        </header>
+
+        <main id="publications-container" class="profile-content">
+            <!-- Publications will be loaded here by script -->
+            <section class="external-links">
+                <h2>Complete List</h2>
+                <div class="external-grid">
+                    <a href="https://scholar.google.com/citations?user=uRY4vdIAAAAJ&hl=en" target="_blank" class="external-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Google Scholar</h3>
+                    </a>
+                    <a href="https://orcid.org/0009-0009-1894-9533" target="_blank" class="external-card">
+                        <i class="fab fa-orcid"></i>
+                        <h3>ORCID</h3>
+                    </a>
+        </div>
+    </section>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2024 Md. Akmol Masud. All rights reserved.</p>
+        </footer>
+        </div>
+
+    <script src="scripts.js"></script>
+    <!-- Go to Top Button -->
+    <button class="go-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="neural-lightning.js"></script>
+    <script>
+        // Go to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide go to top button
+        window.addEventListener('scroll', function() {
+            const goToTopBtn = document.querySelector('.go-to-top');
+            if (window.pageYOffset > 300) {
+                goToTopBtn.classList.add('show');
+            } else {
+                goToTopBtn.classList.remove('show');
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('publications-container');
+                    const publications = data.publications || [];
+
+                    // Group publications by year
+                    const groupedByYear = publications.reduce((acc, pub) => {
+                        const year = pub.year;
+                        if (!acc[year]) {
+                            acc[year] = [];
+                        }
+                        acc[year].push(pub);
+                        return acc;
+                    }, {});
+
+                    // Sort years in descending order
+                    const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
+
+                    let content = '';
+                    sortedYears.forEach(year => {
+                        content += `
+                            <section class="publications-simple">
+                                <h2>${year}</h2>
+                                <div class="publication-list">
+                        `;
+                        
+                        groupedByYear[year].forEach(pub => {
+                            // Highlight your name
+                            const authors = pub.authors.replace(/Masud, M. A./g, '<strong>Masud, M. A.</strong>');
+
+                            // Create links
+                            let linksHtml = '';
+                            if (pub.links) {
+                                for (const [name, url] of Object.entries(pub.links)) {
+                                    if (url && url !== '#') {
+                                        linksHtml += `<a href="${url}" target="_blank">${name.toUpperCase()}</a>`;
+                                    }
+                                }
+                            }
+
+                            content += `
+                                <div class="publication-simple">
+                                    <h3>${pub.title}</h3>
+                                    <p class="authors">${authors}</p>
+                                    <p class="venue">${pub.venue}${pub.underReview ? ' &bull; Under Review' : ''}</p>
+                                    <div class="pub-links">${linksHtml}</div>
+                                </div>
+                            `;
+                        });
+
+                        content += `</div></section>`;
+                    });
+                    
+                    // Prepend the new content before the existing 'external-links' section
+                    const externalLinksSection = container.querySelector('.external-links');
+                    if (externalLinksSection) {
+                        externalLinksSection.insertAdjacentHTML('beforebegin', content);
+                    } else {
+                        container.innerHTML = content;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching publications data:', error);
+                    document.getElementById('publications-container').innerHTML = '<p>Could not load publications data.</p>';
+                });
+        });
+    </script>
+</body>
+
+</html> 

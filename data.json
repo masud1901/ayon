@@ -1,207 +1,163 @@
 {
     "publications": [
         {
-            "title": "MosQNet-SA: Explainable convolutional-attention network for mosquito classification with application as a RESTful API for dengue and malaria risk mapping",
-            "authors": "Masud, M. A., Akter, S., Sultana, N., Islam, M. S., Yousuf, M. A., Noori, F. M., & Uddin, M. Z.",
+            "title": "Enhanced Alzheimer's Brain Scan Dataset: Normal and Synthesized",
+            "authors": "Masud, M. A.",
             "year": "2024",
-            "description": "Novel deep learning architecture for mosquito species classification with practical applications in disease surveillance.",
-            "underReview": true,
-            "venue": "Figshare",
+            "description": "A comprehensive dataset of normal and synthesized Alzheimer's brain scans for developing and testing diagnostic models.",
+            "underReview": false,
+            "venue": "Zenodo Dataset",
             "links": {
-                "pdf": "https://doi.org/10.6084/m9.figshare.27996986.v2",
-                "code": "https://github.com/masud1901/MosQNet-SA"
+                "doi": "https://doi.org/10.5281/zenodo.14238547"
             }
         },
         {
-            "title": "Pseudo-RGB Data Augmentation for Improved Alzheimer's Disease Detection: An Analysis of CNN Performance",
-            "authors": "Masud, M. A., Akter, S., Sultana, N., Hosen, M. B., Anannya, M., Yousuf, M. A., Azad, A. K. M., Alyami, S. A., & Moni, M. A.",
+            "title": "MosqVision-3K: A Balanced Multi-Source Dataset of 3,000 Annotated Images for Culex, Anopheles, and Aedes Mosquito Species Classification",
+            "authors": "Masud, M. A.",
             "year": "2024",
-            "description": "Innovative data augmentation technique for enhancing Alzheimer's disease detection using deep learning.",
-            "underReview": true,
-            "venue": "Figshare",
+            "description": "A balanced dataset containing 3,000 annotated images of three major mosquito species for classification tasks.",
+            "underReview": false,
+            "venue": "Zenodo Dataset",
             "links": {
-                "pdf": "https://doi.org/10.6084/m9.figshare.27997094.v1",
-                "code": "https://github.com/masud1901/Alzheimers-Pseudo-RGB-Dataset-Comperative-Study"
+                "doi": "https://doi.org/10.5281/zenodo.14238701"
             }
         },
         {
             "title": "KACQ-DCNN: Uncertainty-Aware Interpretable Kolmogorov-Arnold Classical-Quantum Dual-Channel Neural Network for Heart Disease Detection",
             "authors": "Jahin, M. A., Masud, M. A., Mridha, M. F., Aung, Z., & Dey, N.",
             "year": "2024",
-            "description": "A novel quantum-classical hybrid architecture for heart disease detection with uncertainty quantification and interpretability features.",
+            "description": "A hybrid classical-quantum neural network with uncertainty awareness and interpretability for heart disease detection.",
             "underReview": true,
-            "venue": "arXiv preprint",
+            "venue": "arXiv Preprint",
             "links": {
-                "pdf": "https://arxiv.org/abs/2410.07446",
-                "code": "#"
+                "arxiv": "https://arxiv.org/abs/2410.07446",
+                "pdf": "https://arxiv.org/pdf/2410.07446.pdf"
+            }
+        },
+        {
+            "title": "MosQNet-SA: Explainable convolutional-attention network for mosquito classification with application as a RESTful API for dengue and malaria risk mapping",
+            "authors": "Masud, M. A., Akter, S., Sultana, N., Islam, M. S., Yousuf, M. A., Noori, F. M., & Uddin, M. Z.",
+            "year": "2024",
+            "description": "An explainable CNN with an attention mechanism for mosquito classification, deployed as a RESTful API for disease risk mapping.",
+            "underReview": true,
+            "venue": "Figshare Preprint",
+            "links": {
+                "doi": "https://doi.org/10.6084/m9.figshare.27996986.v2",
+                "pdf": "https://doi.org/10.6084/m9.figshare.27996986.v2"
             }
         },
         {
             "title": "Lorentz-Equivariant Quantum Graph Neural Network for High-Energy Physics",
             "authors": "Jahin, M. A., Masud, M. A., Suva, M. W., Mridha, M. F., & Dey, N.",
-            "year": "2024",
-            "description": "Innovative approach combining Lorentz equivariance with quantum computing for particle physics analysis.",
-            "underReview": true,
-            "venue": "Under Review at Nature Physics",
+            "year": "2025",
+            "description": "A quantum graph neural network that respects Lorentz symmetry, designed for high-energy physics applications.",
+            "underReview": false,
+            "venue": "IEEE Transactions on Artificial Intelligence",
             "links": {
-                "pdf": "https://arxiv.org/abs/2411.01641",
-                "code": "#"
+                "doi": "https://doi.org/10.1109/TAI.2025.3554461",
+                "pdf": "https://doi.org/10.1109/TAI.2025.3554461"
+            }
+        },
+        {
+            "title": "Multi-Layered Password-Based Steganography: A Novel Approach for Tiered Information Hiding",
+            "authors": "Masud, M. A., Akter, S., Sultana, N., Yousuf, M. A., & Uddin, M. Z.",
+            "year": "2025",
+            "description": "A new steganography technique using multiple password layers for enhanced security and tiered data hiding.",
+            "underReview": false,
+            "venue": "ECCE 2025 Conference Proceedings",
+            "links": {
+                "doi": "https://doi.org/10.1109/ECCE64574.2025.11013270",
+                "pdf": "https://doi.org/10.1109/ECCE64574.2025.11013270"
+            }
+        },
+        {
+            "title": "Dream: A Novel Explainable Neural Network for Detecting Sleep Apnea Using Single-Lead ECG Signals",
+            "authors": "Akter, S., Masud, M. A., Promi, M. S. I., Sultana, N., Ahmed, M., Rahman, M. M., Yousuf, M. A., Aloteibi, S., & Moni, M. A.",
+            "year": "2025",
+            "description": "An explainable deep learning model named Dream for accurate sleep apnea detection from single-lead ECG signals.",
+            "underReview": true,
+            "venue": "SSRN Preprint",
+            "links": {
+                "doi": "https://doi.org/10.2139/ssrn.5139337",
+                "code": "https://github.com/masud1901/Multi-Layered-Password-Based-Steganography"
             }
         },
         {
             "title": "Quantum Rationale-Aware Graph Contrastive Learning for Jet Discrimination",
             "authors": "Jahin, M. A., Masud, M. A., Mridha, M. F., & Dey, N.",
             "year": "2024",
-            "description": "Research on quantum computing applications in particle physics focusing on jet discrimination using graph contrastive learning.",
+            "description": "A novel graph contrastive learning method with quantum computing principles for improved jet discrimination in particle physics.",
             "underReview": true,
-            "venue": "Conference Proceedings",
+            "venue": "arXiv Preprint (Submitted to NeurIPS 2025)",
             "links": {
-                "pdf": "https://arxiv.org/abs/2411.01642",
-                "code": "#"
+                "arxiv": "https://arxiv.org/abs/2411.01642",
+                "pdf": "https://arxiv.org/pdf/2411.01642.pdf"
             }
-        }
-    ],
-    "activeProjects": [
-        {
-            "title": "Clickshots",
-            "status": "In Progress",
-            "startDate": "Nov 2024",
-            "description": "Building a Python package for automated screenshot capture and processing with advanced image manipulation capabilities.",
-            "tags": ["Python", "Screenshot", "Pip Package"],
-            "collaborators": [],
-            "expectedCompletion": "Jan 2025",
-            "link": "https://github.com/masud1901/clickshot"
         },
         {
-            "title": "Sleep Apnea Detection using Deep Learning Methods",
-            "status": "In Progress",
-            "startDate": "May 2024",
-            "description": "Implementing novel deep learning architectures for sleep apnea detection through ECG signal analysis and spectrogram processing.",
-            "tags": ["Deep Learning", "ECG Signal Processing", "Sleep Apnea Detection"],
-            "collaborators": ["IIT-JU"],
-            "expectedCompletion": "Dec 2024",
-            "link": "https://github.com/masud1901/Sleep-Apnea-Dataset-Preparation"
-        },
-        {
-            "title": "Monte Carlo Simulation for Bangladesh Election",
-            "status": "Active Research",
-            "startDate": "Oct 2024",
-            "description": "Developing statistical models using Monte Carlo methods to analyze electoral patterns and political spectrum distribution in Bangladesh.",
-            "tags": ["Monte Carlo Simulation", "Political Spectrum", "Statistics"],
-            "collaborators": ["IIT-JU"],
-            "expectedCompletion": "Feb 2025",
-            "link": "https://github.com/masud1901/Bangladesh-Political-Landscape-with-Monte-Carlo-Simulation"
-        },
-        {
-            "title": "Federated Learning Optimization",
-            "status": "Starting Soon",
-            "startDate": "Dec 2024",
-            "description": "Researching novel optimization techniques for efficient client-server communication in federated learning environments.",
-            "tags": ["Federated Learning", "Optimization", "Communication"],
-            "collaborators": ["IIT-JU"],
-            "expectedCompletion": "Apr 2025",
-            "link": "#"
+            "title": "Pseudo-RGB Data Augmentation for Improved Alzheimer's Disease Detection: An Analysis of CNN Performance",
+            "authors": "Masud, M. A., Akter, S., Sultana, N., Hosen, M. B., Anannya, M., Yousuf, M. A., Azad, A. K. M., Alyami, S. A., & Moni, M. A.",
+            "year": "2024",
+            "description": "An analysis of a pseudo-RGB data augmentation technique to enhance the performance of CNNs for Alzheimer's detection.",
+            "underReview": true,
+            "venue": "Figshare Preprint",
+            "links": {
+                "doi": "https://doi.org/10.6084/m9.figshare.27997094.v1",
+                "code": "https://github.com/masud1901/Alzheimers-Pseudo-RGB-Dataset-Comperative-Study",
+                "pdf": "https://doi.org/10.6084/m9.figshare.27997094.v1"
+            }
         }
     ],
     "projects": [
         {
-            "title": "MosQnet-SA",
-            "description": "Implemented an advanced CNN-Attention hybrid architecture for accurate mosquito species classification, contributing to disease surveillance systems.",
-            "tags": ["Deep Learning", "Computer Vision", "Mosquito Species Classification"],
-            "link": "https://github.com/masud1901/MosQNet-SA"
+            "title": "Human Detection with YOLOv8",
+            "subtitle": "A web application with a FastAPI backend and Streamlit frontend.",
+            "status": "Active",
+            "description": "Developed a full-stack web application for detecting humans in user-uploaded images. Features a YOLO object detection model backend (FastAPI), a Streamlit frontend, and is fully containerized with Docker for easy deployment on an AWS EC2 instance.",
+            "tags": ["Computer Vision", "FastAPI", "Streamlit", "Docker", "AWS EC2"],
+            "link": "https://github.com/masud1901/human-detection-through-yolov8",
+            "demo_link": "https://replit.nimbusrb.com/"
         },
         {
-            "title": "Alzheimer's Image Augmentation using PseudoRGB",
-            "description": "A novel application of PseudoRGB augmentation techniques for enhanced Alzheimer's disease detection, demonstrating improved model performance over conventional methods.",
-            "tags": ["Deep Learning", "Computer Vision", "Image Processing"],
-            "link": "https://github.com/masud1901/Alzheimers-Pseudo-RGB-Dataset-Comperative-Study"
+            "title": "Multi-Layered Password Steganography",
+            "subtitle": "A novel approach for tiered information hiding.",
+            "status": "Active Research",
+            "description": "Developing a novel steganography technique using multiple password layers for enhanced security and tiered data protection, based on research for ECCE 2025.",
+            "tags": ["Steganography", "Data Hiding", "AES-CBC", "Python"],
+            "link": "https://github.com/masud1901/Multi-Layered-Password-Based-Steganography",
+            "demo_link": "https://www.youtube.com/watch?v=Uf8DsTQ9t9s"
         },
         {
-            "title": "Heart Disease Analysis and Prediction",
-            "description": "Conducted comprehensive statistical analysis and implemented machine learning models for heart disease prediction, achieving significant accuracy improvements.",
-            "tags": ["Machine Learning", "Data Analysis", "Classification"],
-            "link": "https://github.com/masud1901/EDA-and-ML-model-prediction-on-Heart-Dataset"
+            "title": "Privacy-Robustness Bound in Federated Learning",
+            "subtitle": "A theoretical framework for the privacy-robustness trade-off.",
+            "status": "Research",
+            "description": "This research proposes and empirically validates a Privacy-Robustness Bound (PRB), a theoretical framework for quantifying the trade-off between differential privacy and model robustness against poisoning attacks in federated learning.",
+            "tags": ["Federated Learning", "Differential Privacy", "Robustness", "Python"],
+            "link": "https://github.com/masud1901/Privacy-Robustness-Bound-aggrigation"
         },
         {
-            "title": "Face Recognition with OpenCV",
-            "description": "Developed a real-time face recognition system utilizing OpenCV, incorporating advanced image processing algorithms for robust performance.",
-            "tags": ["Computer Vision", "Face Recognition", "OpenCV"],
-            "link": "https://github.com/masud1901/face-recognition-openCV"
+            "title": "Monte Carlo Simulation for Bangladesh Election",
+            "subtitle": "Statistical Modeling for Political Analysis",
+            "status": "Active Research",
+            "description": "Developing statistical models using Monte Carlo methods to analyze electoral patterns and political spectrum distribution in Bangladesh.",
+            "tags": ["Monte Carlo Simulation", "Political Spectrum", "Statistics"],
+            "link": "https://github.com/masud1901/Bangladesh-Political-Landscape-with-Monte-Carlo-Simulation"
         },
         {
-            "title": "Military Audio Dataset Handling",
-            "description": "Engineered sophisticated preprocessing pipelines for military audio classification, optimizing data handling for large-scale acoustic analysis.",
-            "tags": ["Audio Processing", "Sound Classification", "Data Analysis"],
-            "link": "https://github.com/masud1901/military_audio_dataset_dataset_handling"
+            "title": "Ice Cream Brand Analysis",
+            "subtitle": "Data analysis of consumer preferences and market trends.",
+            "status": "In Progress",
+            "description": "An analysis project focused on the ice cream market, exploring brand popularity, consumer sentiment, and market trends using modern data analysis techniques.",
+            "tags": ["Data Analysis", "Market Research", "Data Visualization"],
+            "link": "https://github.com/masud1901/Ice-cream-brand-analysis"
         },
         {
-            "title": "AES Encryption with LSB Steganography",
-            "description": "Integrated AES encryption with LSB steganography techniques to develop a robust information security solution for image-based data transmission.",
-            "tags": ["Cryptography", "Security", "Image Processing"],
-            "link": "https://github.com/masud1901/AES-encription-with-LSB-steganography"
-        },
-        {
-            "title": "SA East Website Project",
-            "description": "Architected and implemented a responsive web platform with modern UI/UX principles and interactive features.",
-            "tags": ["Web Development", "UI Design", "JavaScript"],
-            "link": "https://github.com/masud1901/SA-east-website-project"
-        },
-        {
-            "title": "Land Cover Data Processing",
-            "description": "Applied Felzenszwalb's algorithm for advanced segmentation of land cover data, enabling precise geographical analysis of Haywood County.",
-            "tags": ["GIS", "Image Segmentation", "Data Processing"],
-            "link": "https://github.com/masud1901/Land-Cover-Data-Processing"
-        },
-        {
-            "title": "Asteroid Shooter Game",
-            "description": "Created an interactive browser-based game featuring physics-based animations and responsive control systems.",
-            "tags": ["Game Development", "JavaScript", "Animations"],
-            "link": "https://github.com/masud1901/Asteroid-Shooter"
+            "title": "Clickshots Package",
+            "subtitle": "Python Package for Screenshot Automation",
+            "status": "In Progress",
+            "description": "Building a comprehensive Python package for automated screenshot capture and processing with advanced image manipulation capabilities.",
+            "tags": ["Python", "Package Dev", "Automation", "PyPI"],
+            "link": "https://github.com/masud1901/clickshot"
         }
-    ],
-    "achievements": [
-        {
-            "title": "CUET ETE Day 2023 ML Competition",
-            "description": "Ranked 37th out of 200+ participants in NLP and deep learning competition",
-            "date": "Nov 2023",
-            "link": "https://www.kaggle.com/competitions/nlp-competition-cuet-ete-day-2023/overview"
-        },
-        {
-            "title": "DL Enigma 1.0 - SUST CSE Carnival 2024",
-            "description": "Secured 63rd place in computer vision competition",
-            "date": "Feb 2024",
-            "link": "https://www.kaggle.com/competitions/dl-enigma-10-sust-cse-carnival-2024"
-        },
-        {
-            "title": "Duke of Edinburgh Leadership Award",
-            "description": "Bronze Standard - Recognition for leadership and project management",
-            "date": "Feb 2024",
-            "link": "https://www.linkedin.com/in/akmolmasudayon/overlay/1722167029630/single-media-viewer/?profileId=ACoAADoWV84BYHk7dxXEP1ke8rk0l3q0DQrC2uQ"
-        }
-    ],
-    "affiliations": [
-        {
-            "organization": "IEEE JU Student Branch",
-            "role": "Media and Communications Lead & Membership Development Lead", 
-            "period": "Feb 2022 - Aug 2024",
-            "description": "Spearheaded strategic communications and membership growth initiatives, resulting in a 40% increase in branch visibility and active participation across technical events and workshops."
-        },
-        {
-            "organization": "E-Business & Entrepreneurship Club, JU",
-            "role": "Executive",
-            "period": "Mar 2019 - Jun 2022", 
-            "description": "Orchestrated impactful entrepreneurship workshops and networking events, facilitating meaningful connections between students and industry leaders while nurturing innovative business ideas."
-        },
-        {
-            "organization": "IIT-JU Sports Club",
-            "role": "President",
-            "period": "Jan 2024 - Present",
-            "description": "Currently leading a dynamic team of 50 members, successfully implementing diverse sports programs and wellness initiatives that have enhanced student engagement and physical well-being across campus."
-        }
-    ],
-    "about": {
-        "image": "assets/profile.jpg",
-        "shortBio": "Machine Learning Researcher | Computer Vision & Deep Learning Enthusiast",
-        "fullBio": "I'm a Machine Learning researcher at the Institute of Information Technology, Jahangirnagar University. My journey started with computer vision and deep learning, where I built a strong foundation working on various image processing and neural network projects.\n\nMy early work focused on computer vision tasks and traditional deep learning models. Over time, I became really interested in how we could make better use of unlabeled data, which led me to explore semi-supervised learning. A turning point came when I worked on a quantum graph contrastive learning project for particle physics - this opened my eyes to the amazing possibilities of combining quantum computing with machine learning.\n\nI've worked on some cool projects like:\n• A quantum-classical hybrid system (KACQ-DCNN) for heart disease detection\n• A special type of quantum neural network that helps analyze particle physics data\n• Various computer vision and deep learning models\n\nI'm comfortable working with:\n• Computer Vision & Deep Learning\n• Semi-Supervised Learning\n• Quantum Machine Learning\n• Python, TensorFlow, PyTorch, and Qiskit\n\nOutside of research, I enjoy being part of the student community. I lead the IIT-JU Sports Club and help run communications for our IEEE Student Branch. These roles let me connect with other students and share what I've learned.\n\nWhat really excites me is finding ways to make machine learning work better with less labeled data. I want to build systems that can learn from both labeled and unlabeled data, especially in areas like healthcare and physics where getting labeled data can be really hard."
-    }
+    ]
 }

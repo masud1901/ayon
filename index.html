@@ -19,159 +19,45 @@
 </head>
 
 <body>
-    <nav>
-        <div class="nav-content">
-            <div class="logo-section">
-                <a href="#" class="logo">AM</a>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about" class="active">About</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#affiliations">Affiliations</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="menu-button" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-    <section id="hero">
-        <canvas id="neural-lightning"></canvas>
-        <div class="container">
-            <div class="matrix-bg"></div>
-            <div class="neural-network"></div>
+    <canvas id="neural-lightning"></canvas>
+    <header class="hero-container">
+        <hr class="separator top-separator">
+
+        <div class="hero-content">
             <h1>Md. Akmol Masud</h1>
-            <p>Machine Learning Researcher | Computer Vision Specialist</p>
-            <div class="social-links">
-                <a href="https://github.com/masud1901" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/akmolmasudayon/" target="_blank"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://www.kaggle.com/masud1901" target="_blank"><i class="fab fa-kaggle"></i></a>
-                <a href="https://scholar.google.com/citations?user=uRY4vdIAAAAJ&hl=en" target="_blank"><i 
-                        class="fas fa-graduation-cap"></i></a>
-                <a href="https://orcid.org/0009-0009-1894-9533" target="_blank"><i 
-                        class="fab fa-orcid"></i></a>
-                <a href="mailto:akmolmasud5@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            </div>
-            <div class="cta-buttons">
-                <a href="https://drive.google.com/file/d/1Ip0aCNmJgtb1-v32RExzgbfkaSBUxzR-/view?usp=drive_link" class="btn btn-primary" download>
-                    <i class="fas fa-download"></i> Download CV
-                </a>
-            </div>
-        </div>
-    </section>
-    <section id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="profile-frame">
-                        <img src="assets/profile.jpg" alt="Md. Akmol Masud" class="profile-pic">
-                        <div class="frame-decoration"></div>
-                    </div>
+            <p>AI/ML Researcher Specializing in CV & FL</p>
+            <div class="hero-actions">
+                <div class="social-links">
+                    <a href="https://github.com/masud1901" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/akmolmasudayon/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.kaggle.com/masud1901" target="_blank" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+                    <a href="https://scholar.google.com/citations?user=uRY4vdIAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://orcid.org/0009-0009-1894-9533" target="_blank" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                    <a href="mailto:akmolmasud5@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
-                <div class="about-content">
-                    <h2>About Me</h2>
-                    <div class="about-text">
-                        <p>I am a Machine Learning researcher at the <a href="https://juniv.edu/institute/iit" target="_blank">Institute of Information Technology</a>, Jahangirnagar University, with expertise in computer vision and deep learning. My research journey began with my thesis on mosquito detection using deep learning (MosQNet-SA) under <a href="https://www.juniv.edu/teachers/sislam" target="_blank">Dr. Shahidul Islam</a>. Currently, I am working with <a href="https://scholar.google.com/citations?user=r2wOKBEAAAAJ&hl=en" target="_blank">Dr. Mohammad Abu Yousuf</a> on projects involving ECG signal analysis, Alzheimer’s detection, and steganography, in collaboration with <a href="https://scholar.google.com/citations?hl=en&user=x2KTWwsAAAAJ" target="_blank">Md. Biplob Hossen</a>.</p>
-                        
-                        <p>I explored quantum machine learning through a collaboration with <a href="https://abrar2652.github.io/" target="_blank">Md. Abrar Jahin</a>, leading to projects like KACQ-DCNN, a quantum-classical hybrid for heart disease detection, and quantum neural networks for particle physics. These experiences inspired my focus on self-supervised learning, which now drives much of my work.</p>
-                        
-                        <p>Beyond research, I previously served as an Executive at the E-Business & Entrepreneurship Club (EEC-JU) and as Media & Communications Lead at the IEEE Student Branch. Currently, I lead the <a href="https://www.facebook.com/iitsportsclubju/" target="_blank">IIT-JU Sports Club</a> and actively participate in athletics.</p>
-                        <p> My passion lies in creating machine learning systems that thrive on limited labeled data, addressing challenges in critical areas like healthcare and physics.</p>
-                    </div>
+                <div class="hero-divider"></div>
+                <div class="cv-download">
+                    <a href="https://drive.google.com/file/d/1Ip0aCNmJgtb1-v32RExzgbfkaSBUxzR-/view?usp=drive_link" class="btn" download>
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <section id="publications">
-        <div class="container">
-            <h2>Recent Publications</h2>
-            <div class="publication-list">
-                <!-- Content will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
 
-    <section id="active-projects">
-        <div class="container">
-            <h2>Active Projects</h2>
-            <div class="active-projects-grid">
-                <!-- Content will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
+        <hr class="separator bottom-separator">
 
-    <section id="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="project-grid">
-                <!-- Content will be loaded dynamically -->
-            </div>
+        <!-- Vasilaki-style Navigation Boxes -->
+        <div class="vasilaki-nav">
+            <a href="about.html" class="nav-box">PROFILE</a>
+            <a href="projects.html" class="nav-box">PROJECTS</a>
+            <a href="publications.html" class="nav-box">PUBLICATIONS</a>
+            <a href="contact.html" class="nav-box">CONTACT</a>
         </div>
-    </section>
 
-    <section id="achievements">
-        <div class="container">
-            <h2>Achievements</h2>
-            <div class="achievements-grid">
-                <!-- Content will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <section id="affiliations">
-        <div class="container">
-            <h2>Professional Affiliations</h2>
-            <div class="affiliations-list">
-                <!-- Content will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <i class="fas fa-envelope contact-icon"></i>
-                    <h3 class="contact-title">Email</h3>
-                    <div class="contact-info">
-                        <a href="mailto:akmolmasud5@gmail.com">akmolmasud5@gmail.com</a>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt contact-icon"></i>
-                    <h3 class="contact-title">Location</h3>
-                    <div class="contact-info">
-                        Institute of Information Technology<br>
-                        Jahangirnager University<br>
-                        Dhaka, Bangladesh
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-share-alt contact-icon"></i>
-                    <h3 class="contact-title">Social</h3>
-                    <div class="contact-info">
-                        <a href="https://github.com/masud1901" target="_blank">GitHub</a> •
-                        <a href="https://www.linkedin.com/in/akmol-masud-ayon/" target="_blank">LinkedIn</a> •
-                        <a href="https://www.kaggle.com/masud1901" target="_blank">Kaggle</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
+        <footer class="main-footer">
             <p>&copy; 2024 Md. Akmol Masud. All rights reserved.</p>
-        </div>
-    </footer>
+        </footer>
+    </header>
 
     <script>
         // Scroll Progress Bar
@@ -198,67 +84,7 @@
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
-
-        // Dark mode toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-        // Check for saved theme preference or default to user's system preference
-        const currentTheme = localStorage.getItem('theme') ||
-            (prefersDarkScheme.matches ? 'dark' : 'light');
-
-        // Set initial theme
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        updateThemeIcon(currentTheme);
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
-
-        function updateThemeIcon(theme) {
-            const icon = themeToggle.querySelector('i');
-            icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.querySelector('.menu-button');
-            const navLinks = document.querySelector('.nav-links');
-
-            menuButton.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                // Toggle icon between bars and times
-                const icon = this.querySelector('i');
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!event.target.closest('.nav-content')) {
-                    navLinks.classList.remove('active');
-                    const icon = menuButton.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-
-            // Close menu when clicking on a link
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    const icon = menuButton.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                });
-            });
-        });
     </script>
-    <script src="scripts.js"></script>
     <script src="neural-lightning.js"></script>
 </body>
 

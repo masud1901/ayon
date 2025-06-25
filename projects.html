@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Md. Akmol Masud</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLR6FNLGT2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-JLR6FNLGT2');
+    </script>
+</head>
+
+<body>
+    <canvas id="neural-lightning"></canvas>
+    <div class="profile-container">
+        <header>
+            <a href="index.html" class="home-logo" aria-label="Home">
+                <i class="fas fa-home"></i>
+            </a>
+
+            <hr class="separator top-separator">
+            
+            <div class="page-title">
+                <h1 class="large-title">Projects</h1>
+                <p class="title-subtitle">Current Projects & Research Initiatives</p>
+            </div>
+            
+            <hr class="separator bottom-separator">
+
+            <!-- Vasilaki-style Navigation Boxes -->
+            <div class="vasilaki-nav">
+                <a href="about.html" class="nav-box">PROFILE</a>
+                <a href="projects.html" class="nav-box active">PROJECTS</a>
+                <a href="publications.html" class="nav-box">PUBLICATIONS</a>
+                <a href="contact.html" class="nav-box">CONTACT</a>
+            </div>
+
+            <hr class="separator">
+        </header>
+                
+        <main class="profile-content">
+            <section class="projects-section">
+                <h2>My Projects</h2>
+                <div id="projects-container" class="projects-enhanced">
+                    <!-- Projects will be dynamically loaded here -->
+                </div>
+            </section>
+
+            <section class="external-links">
+                <h2>Explore More</h2>
+                <div class="external-grid">
+                    <a href="https://github.com/masud1901" target="_blank" class="external-card">
+                        <i class="fab fa-github"></i>
+                        <h3>GitHub</h3>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=uRY4vdIAAAAJ&hl=en" target="_blank" class="external-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Google Scholar</h3>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2024 Md. Akmol Masud. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="scripts.js"></script>
+    <!-- Go to Top Button -->
+    <button class="go-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="neural-lightning.js"></script>
+    <script>
+        // Go to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide go to top button
+        window.addEventListener('scroll', function() {
+            const goToTopBtn = document.querySelector('.go-to-top');
+            if (window.pageYOffset > 300) {
+                goToTopBtn.classList.add('show');
+            } else {
+                goToTopBtn.classList.remove('show');
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('projects-container');
+                    if (data.projects && data.projects.length > 0) {
+                        data.projects.forEach(project => {
+                            const card = createProjectCard(project);
+                            container.innerHTML += card;
+                        });
+                    } else {
+                        container.innerHTML = '<p>No projects to display at the moment.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching project data:', error);
+                    document.getElementById('projects-container').innerHTML = '<p>Could not load project data.</p>';
+                });
+        });
+
+        function getStatusClass(status) {
+            if (!status) return 'development';
+            const lowerCaseStatus = status.toLowerCase();
+            if (lowerCaseStatus.includes('active')) return 'active';
+            if (lowerCaseStatus.includes('research')) return 'research';
+            return 'development';
+        }
+        
+        function getIconClass(title) {
+            const lowerCaseTitle = title.toLowerCase();
+            if (lowerCaseTitle.includes('sleep apnea')) return 'fa-bed';
+            if (lowerCaseTitle.includes('election')) return 'fa-chart-line';
+            if (lowerCaseTitle.includes('clickshots')) return 'fa-camera';
+            if (lowerCaseTitle.includes('mosquito')) return 'fa-bug';
+            if (lowerCaseTitle.includes('alzheimer')) return 'fa-brain';
+            if (lowerCaseTitle.includes('ecg')) return 'fa-heartbeat';
+            if (lowerCaseTitle.includes('quantum')) return 'fa-atom';
+            if (lowerCaseTitle.includes('privacy')) return 'fa-shield-alt';
+            return 'fa-flask'; // Default icon
+        }
+
+        function createProjectCard(project) {
+            const tags = project.tags.map(tag => `<span class="tech-badge">${tag}</span>`).join('');
+            const statusBadge = project.status ? `<div class="project-status-badge ${getStatusClass(project.status)}">${project.status}</div>` : '';
+            const subtitleHtml = project.subtitle ? `<p class="project-subtitle">${project.subtitle}</p>` : '';
+            const demoButton = project.demo_link ? `
+                <a href="${project.demo_link}" target="_blank" class="project-btn">
+                    <i class="fas fa-play-circle"></i> Live Demo
+                </a>
+            ` : '';
+
+            return `
+                <div class="project-card-enhanced">
+                    <div class="project-header-enhanced">
+                        <div class="project-icon-enhanced">
+                            <i class="fas ${getIconClass(project.title)}"></i>
+                        </div>
+                        <div class="project-title-section">
+                            <h3>${project.title}</h3>
+                            ${subtitleHtml}
+                        </div>
+                        ${statusBadge}
+                    </div>
+                    <div class="project-description-enhanced">
+                        <p>${project.description}</p>
+                    </div>
+                    <div class="project-tech-stack">
+                        ${tags}
+                    </div>
+                    <div class="project-actions">
+                        <a href="${project.link}" target="_blank" class="project-btn primary">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        ${demoButton}
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+
+</html> 

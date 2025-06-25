@@ -45,14 +45,13 @@ class NeuralLightning {
   resize() {
     if (!this.canvas) return;
 
-    const hero = document.getElementById("hero");
     const dpr = window.devicePixelRatio || 1;
 
-    this.canvas.style.width = hero.offsetWidth + "px";
-    this.canvas.style.height = hero.offsetHeight + "px";
+    this.canvas.style.width = window.innerWidth + "px";
+    this.canvas.style.height = window.innerHeight + "px";
 
-    this.canvas.width = hero.offsetWidth * dpr;
-    this.canvas.height = hero.offsetHeight * dpr;
+    this.canvas.width = window.innerWidth * dpr;
+    this.canvas.height = window.innerHeight * dpr;
 
     this.ctx.scale(dpr, dpr);
 

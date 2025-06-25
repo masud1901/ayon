@@ -9,9 +9,6 @@ async function loadContent() {
     console.log("Loading content...");
 
     if (data.about) renderAbout(data.about);
-    if (data.publications) renderPublications(data.publications);
-    if (data.projects) renderProjects(data.projects);
-    if (data.activeProjects) renderActiveProjects(data.activeProjects);
     if (data.researchUpdates) renderResearchUpdates(data.researchUpdates);
     if (data.achievements) {
       console.log("Rendering achievements...", data.achievements);
@@ -21,8 +18,13 @@ async function loadContent() {
       console.log("Rendering affiliations...", data.affiliations);
       renderAffiliations(data.affiliations);
     }
+    
+    // Load projects if on the projects page
+    if (window.location.pathname.includes('projects.html') && (data.activeProjects || data.completedProjects)) {
+      console.log("Rendering projects...");
+      renderProjects(data.activeProjects || [], data.completedProjects || []);
+    }
 
-    loadProjectImages();
     initializeAboutSection();
   } catch (error) {
     console.error("Error loading content:", error);
@@ -39,79 +41,6 @@ function renderAbout(about) {
   if (profilePic && about.image) {
     profilePic.src = about.image;
   }
-}
-
-function renderPublications(publications) {
-  const publicationList = document.querySelector(".publication-list");
-  publicationList.innerHTML = publications
-    .map(
-      (pub) => `
-        <div class="publication ${pub.underReview ? "under-review" : ""}">
-            <div class="publication-content">
-                <h3>${pub.title}</h3>
-                <div class="publication-meta">
-                    <span><i class="far fa-calendar"></i> ${pub.year}</span>
-                    <span><i class="far fa-user"></i> ${pub.authors}</span>
-                    ${
-                      pub.underReview
-                        ? '<span class="review-badge"><i class="fas fa-hourglass-half"></i> Under Review</span>'
-                        : `<span class="venue-badge"><i class="fas fa-book"></i> ${pub.venue}</span>`
-                    }
-                </div>
-                <p>${pub.description}</p>
-            </div>
-            <div class="publication-links">
-                <a href="${pub.links.pdf}" class="pub-link" target="_blank">
-                    <i class="fas fa-file-pdf"></i> PDF
-                </a>
-                <a href="${pub.links.code}" class="pub-link" target="_blank">
-                    <i class="fas fa-code"></i> Code
-                </a>
-            </div>
-        </div>
-    `
-    )
-    .join("");
-}
-function renderProjects(projects) {
-  const projectGrid = document.querySelector(".project-grid");
-  projectGrid.innerHTML = projects
-    .map(
-      (project) => `
-        <div class="project-card" data-aos="fade-up">
-            <div class="project-content">
-                <div>
-                    <h3>${project.title}</h3>
-                    <p>${project.description}</p>
-                    <div class="project-tags">
-                        ${project.tags
-                          .map(
-                            (tag) => `
-                            <span class="project-tag">${tag}</span>
-                        `
-                          )
-                          .join("")}
-                    </div>
-                </div>
-                <div class="project-links">
-                    <a href="${
-                      project.link
-                    }" class="project-link" target="_blank">
-                        <i class="fab fa-github"></i> View Project
-                    </a>
-                    ${
-                      project.demo
-                        ? `<a href="${project.demo}" class="project-demo" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>`
-                        : ""
-                    }
-                </div>
-            </div>
-        </div>
-    `
-    )
-    .join("");
 }
 
 function renderAchievements(achievements) {
@@ -138,29 +67,63 @@ function renderAchievements(achievements) {
 }
 
 function renderAffiliations(affiliations) {
-  const affiliationsList = document.querySelector(".affiliations-list");
-  if (!affiliationsList) {
-    console.error("Affiliations list element not found");
+  const affiliationsContainer = document.querySelector(".affiliations-container");
+  if (!affiliationsContainer) {
+    console.error("Affiliations container element not found");
     return;
   }
 
-  affiliationsList.innerHTML = affiliations
+  affiliationsContainer.innerHTML = affiliations
     .map(
       (affiliation) => `
       <div class="affiliation-card">
-        <div class="affiliation-content">
-          <h3>${affiliation.organization}</h3>
-          <div class="affiliation-role">${affiliation.role}</div>
-          <div class="affiliation-period">${affiliation.period}</div>
-          <p class="affiliation-description">${affiliation.description}</p>
-        </div>
+        <h3 class="affiliation-title">${affiliation.organization}</h3>
+        <div class="affiliation-role">${affiliation.role}</div>
+        <div class="affiliation-period">${affiliation.period}</div>
+        <p class="affiliation-description">${affiliation.description}</p>
       </div>
     `
     )
     .join("");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function renderResearchUpdates(updates) {
+  const updatesContainer = document.querySelector(".research-updates");
+  if (!updatesContainer) return;
+
+  updatesContainer.innerHTML = updates
+    .map(
+      (update) => `
+      <div class="update-card">
+        <div class="update-date">${update.date}</div>
+        <h3 class="update-title">${update.title}</h3>
+        <p class="update-description">${update.description}</p>
+        ${
+          update.link
+            ? `<a href="${update.link}" class="update-link" target="_blank">Learn more</a>`
+            : ""
+        }
+      </div>
+    `
+    )
+    .join("");
+}
+
+function initializeAboutSection() {
+  const readMoreBtn = document.querySelector(".read-more-btn");
+  if (readMoreBtn) {
+    readMoreBtn.addEventListener("click", function () {
+      const bioText = document.querySelector(".bio-text");
+      bioText.classList.toggle("expanded");
+      this.textContent = bioText.classList.contains("expanded")
+        ? "Read Less"
+        : "Read More";
+    });
+  }
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
   loadContent();
 });
 
@@ -188,27 +151,7 @@ function updateNavigation() {
 
 window.addEventListener("scroll", updateNavigation);
 
-function loadProjectImages() {
-  const projectCards = document.querySelectorAll(".project-card");
-
-  projectCards.forEach((card) => {
-    const img = new Image();
-    const imageUrl = card.querySelector(".project-image").dataset.src;
-
-    img.onload = function () {
-      card.querySelector(
-        ".project-image"
-      ).style.backgroundImage = `url(${imageUrl})`;
-      card.querySelector(".project-image").classList.add("loaded");
-    };
-
-    img.src = imageUrl;
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-  loadProjectImages();
-
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -231,65 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const contentSections = document.querySelectorAll("section");
   contentSections.forEach((section) => {
     section.innerHTML += '<div class="loading-spinner"></div>';
-  });
-});
-
-function renderActiveProjects(activeProjects) {
-  const activeProjectsGrid = document.querySelector(".active-projects-grid");
-  activeProjectsGrid.innerHTML = activeProjects
-    .map(
-      (project) => `
-    <div class="active-project-card">
-      <div class="active-project-progress"></div>
-      <div class="active-project-header">
-        <span class="active-project-status status-${project.status
-          .toLowerCase()
-          .replace(/\s+/g, "-")}">
-          ${project.status}
-        </span>
-      </div>
-      <h3 class="active-project-title">${project.title}</h3>
-      <div class="active-project-timeline">
-        <i class="far fa-calendar-alt"></i>
-        ${project.startDate} - ${project.expectedCompletion}
-      </div>
-      <p class="active-project-description">${project.description}</p>
-      <div class="active-project-tags">
-        ${project.tags
-          .map(
-            (tag) => `
-          <span class="active-project-tag">${tag}</span>
-        `
-          )
-          .join("")}
-      </div>
-      ${
-        project.link
-          ? `
-        <a href="${project.link}" class="active-project-link" target="_blank">
-          <i class="fas fa-external-link-alt"></i> View Project
-        </a>
-      `
-          : ""
-      }
-    </div>
-  `
-    )
-    .join("");
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  const projectCards = document.querySelectorAll(".project-card");
-
-  projectCards.forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      card.style.setProperty("--mouse-x", `${x}px`);
-      card.style.setProperty("--mouse-y", `${y}px`);
-    });
   });
 });
 
@@ -347,46 +231,236 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function initializeAboutSection() {
-    const aboutSection = document.querySelector('.about-text');
-    const paragraphs = aboutSection.querySelectorAll('p');
-    const list = aboutSection.querySelector('.about-list');
+// Projects rendering function
+function renderProjects(activeProjects, completedProjects) {
+  const projectsContainer = document.getElementById('projects-container');
+  if (!projectsContainer) {
+    console.error("Projects container not found");
+    return;
+  }
+  
+  // Clear existing content if we have projects to display
+  if ((activeProjects && activeProjects.length > 0) || 
+      (completedProjects && completedProjects.length > 0)) {
+    projectsContainer.innerHTML = '';
     
-    // Add initial classes for animation
-    paragraphs.forEach((p, index) => {
-        p.classList.add('animate-paragraph');
-        p.style.animationDelay = `${index * 0.2}s`;
-    });
-
-    if (list) {
-        const listItems = list.querySelectorAll('li');
-        listItems.forEach((item, index) => {
-            item.classList.add('animate-list-item');
-            item.style.animationDelay = `${(paragraphs.length * 0.2) + (index * 0.15)}s`;
-        });
+    // Add empty state element (hidden by default)
+    const emptyState = document.createElement('div');
+    emptyState.className = 'empty-projects';
+    emptyState.id = 'empty-state';
+    emptyState.style.display = 'none';
+    emptyState.innerHTML = `
+      <i class="fas fa-laptop-code"></i>
+      <h3>No projects found</h3>
+      <p>Projects will appear here once they're added to the database.</p>
+    `;
+    projectsContainer.appendChild(emptyState);
+    
+    // Render active projects
+    if (activeProjects && activeProjects.length > 0) {
+      activeProjects.forEach((project, index) => {
+        const projectElement = createActiveProjectCard(project, index);
+        projectsContainer.appendChild(projectElement);
+      });
     }
-
-    // Add scroll reveal effect
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.2 });
-
-    paragraphs.forEach(p => observer.observe(p));
-    if (list) {
-        observer.observe(list);
+    
+    // Render completed projects
+    if (completedProjects && completedProjects.length > 0) {
+      completedProjects.forEach((project, index) => {
+        const projectElement = createCompletedProjectCard(project, index);
+        projectsContainer.appendChild(projectElement);
+      });
     }
+    
+    // Show empty state if no projects
+    if ((!activeProjects || activeProjects.length === 0) && 
+        (!completedProjects || completedProjects.length === 0)) {
+      document.getElementById('empty-state').style.display = 'block';
+    }
+    
+    // Initialize AOS for new elements
+    if (typeof AOS !== 'undefined') {
+      AOS.refresh();
+    }
+    
+    // Initialize filter functionality
+    initializeProjectFilters();
+  }
+}
 
-    // Add hover effect for paragraphs
-    paragraphs.forEach(p => {
-        p.addEventListener('mouseenter', () => {
-            p.classList.add('highlight');
-        });
-        p.addEventListener('mouseleave', () => {
-            p.classList.remove('highlight');
-        });
+function createActiveProjectCard(project, index) {
+  const card = document.createElement('div');
+  card.className = 'project-card active-project';
+  card.setAttribute('data-aos', 'fade-up');
+  card.setAttribute('data-aos-duration', '800');
+  card.setAttribute('data-aos-delay', (index * 50).toString());
+  
+  // Determine appropriate icon for placeholder
+  let iconClass = 'fa-laptop-code';
+  if (project.title.toLowerCase().includes('clickshot') || project.title.toLowerCase().includes('screenshot')) {
+    iconClass = 'fa-camera';
+  } else if (project.title.toLowerCase().includes('sleep') || project.title.toLowerCase().includes('apnea')) {
+    iconClass = 'fa-bed';
+  } else if (project.title.toLowerCase().includes('monte carlo') || project.title.toLowerCase().includes('election')) {
+    iconClass = 'fa-chart-bar';
+  } else if (project.title.toLowerCase().includes('federated') || project.title.toLowerCase().includes('learning')) {
+    iconClass = 'fa-network-wired';
+  }
+  
+  // Create tags HTML
+  const tagsHTML = project.tags && project.tags.length > 0
+    ? project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')
+    : '';
+  
+  // Create collaborators HTML if they exist
+  const collaboratorsHTML = project.collaborators && project.collaborators.length > 0
+    ? `<div class="project-collaborators">
+         <span class="collaborator-label">Collaborators: </span>
+         ${project.collaborators.join(', ')}
+       </div>`
+    : '';
+  
+  // Create timeline HTML
+  const timelineHTML = `
+    <div class="project-timeline">
+      <span class="project-status">${project.status}</span>
+      <span class="project-dates">${project.startDate} - ${project.expectedCompletion || 'Ongoing'}</span>
+    </div>
+  `;
+  
+  card.innerHTML = `
+    <div class="project-content">
+      <div class="project-icon">
+        <i class="fas ${iconClass}"></i>
+      </div>
+      <h3>${project.title}</h3>
+      ${timelineHTML}
+      <p>${project.description}</p>
+      ${collaboratorsHTML}
+      <div class="project-tags">
+        ${tagsHTML}
+      </div>
+      <div class="project-links">
+        ${project.link && project.link !== '#' ? 
+          `<a href="${project.link}" target="_blank" class="project-link">
+            <i class="fab fa-github"></i> View Project
+          </a>` : ''}
+      </div>
+    </div>
+  `;
+  
+  return card;
+}
+
+function createCompletedProjectCard(project, index) {
+  const card = document.createElement('div');
+  card.className = 'project-card completed-project';
+  card.setAttribute('data-aos', 'fade-up');
+  card.setAttribute('data-aos-duration', '800');
+  card.setAttribute('data-aos-delay', (index * 50).toString());
+  
+  // Determine appropriate icon for placeholder
+  let iconClass = 'fa-laptop-code';
+  if (project.title.toLowerCase().includes('mosquito')) {
+    iconClass = 'fa-microscope';
+  } else if (project.title.toLowerCase().includes('alzheimer')) {
+    iconClass = 'fa-brain';
+  } else if (project.title.toLowerCase().includes('ecg') || project.title.toLowerCase().includes('heart')) {
+    iconClass = 'fa-heartbeat';
+  } else if (project.title.toLowerCase().includes('quantum')) {
+    iconClass = 'fa-atom';
+  }
+  
+  // Create tags HTML
+  const tagsHTML = project.tags && project.tags.length > 0
+    ? project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')
+    : '';
+  
+  // Create highlights HTML if they exist
+  const highlightsHTML = project.highlights && project.highlights.length > 0
+    ? `<div class="project-highlights">
+         <ul>
+           ${project.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+         </ul>
+       </div>`
+    : '';
+  
+  card.innerHTML = `
+    <div class="project-content">
+      <div class="project-icon">
+        <i class="fas ${iconClass}"></i>
+      </div>
+      <h3>${project.title}</h3>
+      ${project.completionDate ? `<div class="project-completion">Completed: ${project.completionDate}</div>` : ''}
+      <p>${project.description}</p>
+      ${highlightsHTML}
+      <div class="project-tags">
+        ${tagsHTML}
+      </div>
+      <div class="project-links">
+        ${project.link && project.link !== '#' ? 
+          `<a href="${project.link}" target="_blank" class="project-link">
+            <i class="fab fa-github"></i> View Project
+          </a>` : ''}
+      </div>
+    </div>
+  `;
+  
+  return card;
+}
+
+function initializeProjectFilters() {
+  const filterButtons = document.querySelectorAll('.filter-button');
+  if (!filterButtons.length) return;
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      
+      // Add active class to clicked button
+      button.classList.add('active');
+      
+      // Get filter value
+      const filter = button.getAttribute('data-filter');
+      
+      // Filter projects
+      filterProjects(filter);
     });
+  });
+}
+
+function filterProjects(filter) {
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  // Add fade-out effect to all cards first
+  projectCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transition = 'opacity 0.3s ease';
+  });
+  
+  // Wait for fade-out to complete
+  setTimeout(() => {
+    // Handle individual cards visibility
+    projectCards.forEach(card => {
+      if (filter === 'all') {
+        card.style.display = 'flex';
+      } else if (filter === 'active' && card.classList.contains('active-project')) {
+        card.style.display = 'flex';
+      } else if (filter === 'completed' && card.classList.contains('completed-project')) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    
+    // Fade in visible cards
+    setTimeout(() => {
+      projectCards.forEach(card => {
+        if (card.style.display === 'flex') {
+          card.style.opacity = '1';
+        }
+      });
+    }, 50);
+  }, 300);
 }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Md. Akmol Masud</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLR6FNLGT2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-JLR6FNLGT2');
+    </script>
+</head>
+
+<body>
+    <canvas id="neural-lightning"></canvas>
+    <div class="profile-container">
+        <header>
+            <a href="index.html" class="home-logo" aria-label="Home">
+                <i class="fas fa-home"></i>
+            </a>
+
+            <hr class="separator top-separator">
+            
+            <div class="page-title">
+                <h1 class="large-title">Contact</h1>
+                <p class="title-subtitle">Get in Touch</p>
+            </div>
+            
+            <hr class="separator bottom-separator">
+
+            <!-- Vasilaki-style Navigation Boxes -->
+            <div class="vasilaki-nav">
+                <a href="about.html" class="nav-box">PROFILE</a>
+                <a href="projects.html" class="nav-box">PROJECTS</a>
+                <a href="publications.html" class="nav-box">PUBLICATIONS</a>
+                <a href="contact.html" class="nav-box active">CONTACT</a>
+            </div>
+
+            <hr class="separator">
+        </header>
+
+        <main class="profile-content">
+            <section class="contact-minimal">
+                <div class="contact-grid-minimal">
+                    <div class="contact-card-minimal">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <a href="mailto:akmolmasud5@gmail.com" class="contact-link">akmolmasud5@gmail.com</a>
+                    </div>
+
+                    <div class="contact-card-minimal">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/akmolmasudayon/" target="_blank" class="contact-link">Connect</a>
+                    </div>
+
+                    <div class="contact-card-minimal">
+                        <div class="contact-icon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <h3>Twitter</h3>
+                        <a href="https://twitter.com/masud1901" target="_blank" class="contact-link">Follow</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2024 Md. Akmol Masud. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="scripts.js"></script>
+    <!-- Go to Top Button -->
+    <button class="go-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="neural-lightning.js"></script>
+    <script>
+        // Go to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide go to top button
+        window.addEventListener('scroll', function() {
+            const goToTopBtn = document.querySelector('.go-to-top');
+            if (window.pageYOffset > 300) {
+                goToTopBtn.classList.add('show');
+            } else {
+                goToTopBtn.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+
+</html> 
