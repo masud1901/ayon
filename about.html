@@ -220,8 +220,22 @@
         <footer class="main-footer">
             <p>&copy; 2024 Md. Akmol Masud. All rights reserved.</p>
         </footer>
-        </div>
+    </div>
+    <button class="go-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
     <script src="neural-lightning.js"></script>
+    <script>
+        const goToTopBtn = document.querySelector('.go-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                goToTopBtn.classList.add('show');
+            } else {
+                goToTopBtn.classList.remove('show');
+            }
+        });
+        goToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 
 </html> 
