@@ -205,7 +205,7 @@ a:hover {
 /* Enhanced Project Cards */
 .projects-enhanced {
     display: grid;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-top: 2rem;
 }
 
@@ -213,7 +213,7 @@ a:hover {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 1rem;
+    padding: 0.75rem;
     text-align: left;
     transition: all 0.3s ease;
     position: relative;
@@ -245,8 +245,8 @@ a:hover {
 .project-header-enhanced {
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .project-icon-enhanced {
@@ -303,7 +303,7 @@ a:hover {
 }
 
 .project-description-enhanced {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .project-description-enhanced p {
@@ -314,17 +314,17 @@ a:hover {
 
 .project-tech-stack {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.3rem;
     flex-wrap: wrap;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .tech-badge {
-    padding: 0.25rem 0.75rem;
+    padding: 0.2rem 0.5rem;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid var(--border-color);
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: var(--text-secondary);
     transition: all 0.3s ease;
 }
@@ -337,17 +337,17 @@ a:hover {
 
 .project-actions {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .project-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 500;
     transition: all 0.3s ease;
     border: 1px solid var(--border-color);
@@ -486,6 +486,10 @@ a:hover {
 
     .nav-box:last-child {
         border-bottom: none;
+    }
+
+    .project-status-badge {
+        display: none;
     }
 }
 
@@ -712,7 +716,7 @@ a:hover {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     display: flex;
     gap: 2rem;
     align-items: flex-start;
@@ -792,8 +796,8 @@ a:hover {
 
 /* Education Section */
 .education-section {
-    margin-top: 3rem;
-    padding-top: 3rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
     border-top: 1px solid var(--border-color);
 }
 
@@ -2104,8 +2108,8 @@ a:hover {
 
 /* Achievements Section */
 .achievements-section {
-    margin-top: 3rem;
-    padding-top: 3rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
     border-top: 1px solid var(--border-color);
 }
 
@@ -2174,8 +2178,8 @@ a:hover {
 
 /* Experience Section */
 .experience-section {
-    margin-top: 3rem;
-    padding-top: 3rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
     border-top: 1px solid var(--border-color);
 }
 
@@ -2244,8 +2248,8 @@ a:hover {
 
 /* Certifications Section */
 .certifications-section {
-    margin-top: 3rem;
-    padding-top: 3rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
     border-top: 1px solid var(--border-color);
 }
 
