@@ -44,7 +44,7 @@
                 <a href="publications.html" class="nav-box">PUBLICATIONS</a>
                 <a href="contact.html" class="nav-box">CONTACT</a>
             </div>
-
+            
             <hr class="separator">
         </header>
                 
@@ -67,14 +67,14 @@
                         <i class="fas fa-graduation-cap"></i>
                         <h3>Google Scholar</h3>
                     </a>
-                </div>
-            </section>
+        </div>
+    </section>
         </main>
 
         <footer class="main-footer">
-            <p>&copy; 2024 Md. Akmol Masud. All rights reserved.</p>
+                    <p>&copy; 2024 Md. Akmol Masud. All rights reserved.</p>
         </footer>
-    </div>
+                </div>
 
     <script src="scripts.js"></script>
     <!-- Go to Top Button -->
@@ -123,13 +123,7 @@
                 });
         });
 
-        function getStatusClass(status) {
-            if (!status) return 'development';
-            const lowerCaseStatus = status.toLowerCase();
-            if (lowerCaseStatus.includes('active')) return 'active';
-            if (lowerCaseStatus.includes('research')) return 'research';
-            return 'development';
-        }
+
         
         function getIconClass(title) {
             const lowerCaseTitle = title.toLowerCase();
@@ -146,7 +140,6 @@
 
         function createProjectCard(project) {
             const tags = project.tags.map(tag => `<span class="tech-badge">${tag}</span>`).join('');
-            const statusBadge = project.status ? `<div class="project-status-badge ${getStatusClass(project.status)}">${project.status}</div>` : '';
             const subtitleHtml = project.subtitle ? `<p class="project-subtitle">${project.subtitle}</p>` : '';
             const demoButton = project.demo_link ? `
                 <a href="${project.demo_link}" target="_blank" class="project-btn">
@@ -164,7 +157,6 @@
                             <h3>${project.title}</h3>
                             ${subtitleHtml}
                         </div>
-                        ${statusBadge}
                     </div>
                     <div class="project-description-enhanced">
                         <p>${project.description}</p>
