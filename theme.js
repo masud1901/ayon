@@ -20,7 +20,7 @@ function initTheme() {
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
     });
-}
+} 
 
 // Update the theme toggle icon based on current theme
 function updateThemeIcon(theme) {
